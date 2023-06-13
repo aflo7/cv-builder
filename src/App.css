@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&display=swap");
+
+:root {
+    --red-pantone: #e63946;
+    --honeydew: #f1faee;
+    --non-photo-blue: #a8dadc;
+    --cerulean: #457b9d;
+    --berkeley-blue: #1d3557;
+    --complement: #ffc6a8;
+    --darkgray: rgb(197, 197, 197);
+    --medium-gray: rgb(216, 216, 216);
+    --lightgray: rgb(235, 235, 235);
+    --orange-dark: rgb(185,82,32);
+    --red-dark: rgb(169,33,34);
+}
+nav {
+    background-color: var(--complement);
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+body {
+    font-family: "Signika Negative", sans-serif;
+    background-color: var(--darkgray);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        flex-direction: row;
+        align-items: normal;
+    }
+}
+
+.inputs input {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+.inputs {
+    flex-shrink: 0;
+    width: 700px;
+    border-radius: 5px;
+    background-color: var(--lightgray);
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.resume {
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    border-radius: 5px;
+    background-color: var(--lightgray);
+}
+
+.top-resume {
+    padding: 20px;
+    min-height: 80px;
+    background-color: var(--berkeley-blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.bottom-resume {
+    display: flex;
+    flex: 1;
+}
+
+.resume-info-1 {
+    padding: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resume-info-2 {
+    background-color: var(--medium-gray);
+    padding: 15px;
+    width: 30%;
+}
+
+.blue-text {
+    color: var(--berkeley-blue);
+}
+
+
+.personal-details-title {
+    color: var(--berkeley-blue);
+}
+
+.personal-info-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.experience-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.education-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px;
+
+}
+
+.example-btn {
+    background-color: var(--orange-dark);
+}
+
+.reset-btn {
+background-color: var(--red-dark);
+}
+
+.experience-content {
+    display: flex;
+    gap: 20px;
+}
+
+.education-content {
+    display: flex;
+    gap: 20px;
+}
+
+.education-content-left {
+    font-weight: bold;
+}
+
+.experience-content-left {
+    font-weight: bold;
+}
+
+.bold-text {
+    font-weight: bold;
+}
