@@ -1,3 +1,5 @@
+var crypto = require('crypto');
+
 export const emptyFields = {
     personalInfo: {
         name: "",
