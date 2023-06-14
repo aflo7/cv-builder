@@ -8,6 +8,8 @@
 -   Javascript
 -   CSS
 -   [React](https://reactjs.org/) - JS library
+-   React Testing Library
+-   Jest
 
 ### What I learned
 
