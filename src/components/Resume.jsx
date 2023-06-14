@@ -1,6 +1,6 @@
 import Avatar from "../assets/images/avatar.png"
 import Experience from "./Experience"
-import '../css/Resume.css'
+import "../css/Resume.css"
 
 function Resume({ parentState }) {
     return (
@@ -28,11 +28,9 @@ function Resume({ parentState }) {
                     )}
 
                     {parentState.experience.length > 0 &&
-                        parentState.experience.map((experience, i) => {
-                            return (
-                                <Experience experience={experience} key={i} />
-                            )
-                        })}
+                        parentState.experience.map((experience, i) => (
+                            <Experience experience={experience} key={i} />
+                        ))}
 
                     <div>
                         <h3 className="blue-text">Education</h3>
@@ -40,7 +38,7 @@ function Resume({ parentState }) {
                     </div>
 
                     <div className="education-content">
-                        <div className="education-content-left">
+                        <div>
                             {parentState.education.from}-
                             {parentState.education.to}
                         </div>

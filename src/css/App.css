@@ -67,12 +67,6 @@ main {
     gap: 5px;
 }
 
-.education-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
 button {
     cursor: pointer;
     border-radius: 5px;

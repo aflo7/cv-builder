@@ -1,21 +1,17 @@
-
 ### Links
 
-- Live URL: [Here](https://aflo7.github.io/cv-builder/)
-
-## My process
+-   URL: [Here](https://aflo7.github.io/cv-builder/)
 
 ### Built with
 
-- HTML
-- CSS Flex
-- [React](https://reactjs.org/) - JS library
-
+-   HTML
+-   Javascript
+-   CSS
+-   [React](https://reactjs.org/) - JS library
 
 ### What I learned
 
 I learned about React class components, and how to pass props from class components to functional components
-
 
 ```js
 class App extends Component {
@@ -31,11 +27,27 @@ class App extends Component {
 
                 {/* ... */}
             </div>
-    )}
+        )
+    }
 }
 ```
 
+I learned how to map over an array inside the render() method
 
-### Continued development
+```js
+render() {
+        const experienceInputs = this.state.experience.map((experience, i) => (
+            <ExperienceInputGroup
+                key={i}
+                experience={experience}
+                handleExperienceChange={this.handleExperienceChange}
+                handleExperienceDelete={this.handleExperienceDelete}
+            />
+        ))
+        return (
 
-If I was to continue working on this project, I would add components for each experience and each education a person may have. I would update the state for experience and education to hold an array of objects...
+            {experienceInputs}
+            {/* ... */}
+
+        )}
+```

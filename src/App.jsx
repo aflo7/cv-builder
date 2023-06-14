@@ -4,6 +4,7 @@ import { filledFields, emptyFields } from "./js/stateObjects"
 import Resume from "./components/Resume"
 import ExperienceInputGroup from "./components/ExperienceInputGroup"
 import PersonalInfoInputGroup from "./components/PersonalInfoInputGroup"
+import EducationInputGroup from "./components/Education/EducationInputGroup"
 
 class App extends Component {
     constructor(props) {
@@ -59,7 +60,6 @@ class App extends Component {
             ]
         })
     }
-
     handleEducationChange = (e) => {
         this.setState({
             education: {
@@ -68,8 +68,15 @@ class App extends Component {
             }
         })
     }
-
     render() {
+        const experienceInputs = this.state.experience.map((experience, i) => (
+            <ExperienceInputGroup
+                key={i}
+                experience={experience}
+                handleExperienceChange={this.handleExperienceChange}
+                handleExperienceDelete={this.handleExperienceDelete}
+            />
+        ))
         return (
             <div className="app-wrapper">
                 <nav>REACT RESUME BUILDER</nav>
@@ -85,21 +92,7 @@ class App extends Component {
 
                         <h3>Experience</h3>
 
-                        {this.state.experience.length > 0 &&
-                            this.state.experience.map((experience, i) => {
-                                return (
-                                    <ExperienceInputGroup
-                                        key={i}
-                                        experience={experience}
-                                        handleExperienceChange={
-                                            this.handleExperienceChange
-                                        }
-                                        handleExperienceDelete={
-                                            this.handleExperienceDelete
-                                        }
-                                    />
-                                )
-                            })}
+                        {experienceInputs}
 
                         <button
                             className="add-experience-btn"
@@ -108,51 +101,10 @@ class App extends Component {
                             Add Experience
                         </button>
 
-                        <div className="education-inputs">
-                            <h3>Education</h3>
-                            <input
-                                name="universityName"
-                                type="text"
-                                placeholder="University Name"
-                                value={this.state.education.universityName}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                            <input
-                                name="location"
-                                type="text"
-                                placeholder="Location"
-                                value={this.state.education.location}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                            <input
-                                name="degree"
-                                type="text"
-                                placeholder="Degree"
-                                value={this.state.education.degree}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                            <input
-                                name="subject"
-                                type="text"
-                                placeholder="Subject"
-                                value={this.state.education.subject}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                            <input
-                                name="from"
-                                type="text"
-                                placeholder="From"
-                                value={this.state.education.from}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                            <input
-                                name="to"
-                                type="text"
-                                placeholder="To"
-                                value={this.state.education.to}
-                                onChange={(e) => this.handleEducationChange(e)}
-                            />
-                        </div>
+                        <EducationInputGroup
+                            education={this.state.education}
+                            handleEducationChange={this.handleEducationChange}
+                        />
 
                         <hr></hr>
 
