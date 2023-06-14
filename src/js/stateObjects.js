@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+import {v4 as uuidv4} from 'uuid';
 
 export const emptyFields = {
     personalInfo: {
@@ -11,7 +11,7 @@ export const emptyFields = {
     },
     experience: [
         {
-            id: crypto.randomUUID(),
+            id: uuidv4(),
             position: "",
             company: "",
             city: "",
@@ -20,7 +20,7 @@ export const emptyFields = {
         }
     ],
     education: {
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         universityName: "",
         location: "",
         degree: "",
@@ -42,7 +42,7 @@ export const filledFields = {
     },
     experience: [
         {
-            id: crypto.randomUUID(),
+            id: uuidv4(),
             position: "Junior Engineer",
             company: "Google",
             city: "Los Angeles",
@@ -50,7 +50,7 @@ export const filledFields = {
             to: "2011"
         },
         {
-            id: crypto.randomUUID(),
+            id: uuidv4(),
             position: "Junior Engineer",
             company: "Microsoft",
             city: "Los Angeles",
@@ -58,7 +58,7 @@ export const filledFields = {
             to: "2015"
         },
         {
-            id: crypto.randomUUID(),
+            id: uuidv4(),
             position: "Senior Engineer",
             company: "Google",
             city: "Venice, California",
@@ -67,7 +67,7 @@ export const filledFields = {
         }
     ],
     education: {
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         universityName: "Harvard University",
         location: "Cambridge, MA",
         degree: "Bachelors",

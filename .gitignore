@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+Example.jsx
+Example.test.jsx
+__snapshots__

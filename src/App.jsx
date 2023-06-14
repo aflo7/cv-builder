@@ -5,6 +5,8 @@ import Resume from "./components/Resume"
 import ExperienceInputGroup from "./components/ExperienceInputGroup"
 import PersonalInfoInputGroup from "./components/PersonalInfoInputGroup"
 import EducationInputGroup from "./components/Education/EducationInputGroup"
+import {v4 as uuidv4} from 'uuid';
+
 
 class App extends Component {
     constructor(props) {
@@ -50,7 +52,7 @@ class App extends Component {
             experience: [
                 ...this.state.experience,
                 {
-                    id: crypto.randomUUID(),
+                    id: uuidv4(),
                     position: "",
                     company: "",
                     city: "",
@@ -112,6 +114,7 @@ class App extends Component {
                             Print (not implemented)
                         </button>
                         <button
+                        data-testid="load-data-btn"
                             className="example-btn"
                             onClick={this.fillFieldsWithExample}
                         >

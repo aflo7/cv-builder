@@ -1,8 +1,9 @@
 function PersonalInfoInputGroup({ personalInfo, handlePersonalInfoChange }) {
     return (
-        <div className="personal-info-inputs">
+        <form data-testid="personal-info-inputs" className="personal-info-inputs" name="personal-info-inputs">
             <h3>Personal Information</h3>
             <input
+                data-testid="name"
                 name="name"
                 type="text"
                 placeholder="Name"
@@ -10,41 +11,46 @@ function PersonalInfoInputGroup({ personalInfo, handlePersonalInfoChange }) {
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
             <input
+                data-testid="title"
+                name="title"
                 type="text"
                 placeholder="Title"
-                name="title"
                 value={personalInfo.title}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
             <input
+                data-testid="address"
+                name="address"
                 type="text"
                 placeholder="Address"
-                name="address"
                 value={personalInfo.address}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
             <input
+                data-testid="phoneNumber"
+                name="phoneNumber"
                 type="text"
                 placeholder="Phone number"
-                name="phoneNumber"
                 value={personalInfo.phoneNumber}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
             <input
+                data-testid="email"
+                name="email"
                 type="text"
                 placeholder="Email"
-                name="email"
                 value={personalInfo.email}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
             <input
+                data-testid="description"
+                name="description"
                 type="text"
                 placeholder="Description"
-                name="description"
                 value={personalInfo.description}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
-        </div>
+        </form>
     )
 }
 
