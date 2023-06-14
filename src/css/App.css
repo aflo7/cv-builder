@@ -10,8 +10,8 @@
     --darkgray: rgb(197, 197, 197);
     --medium-gray: rgb(216, 216, 216);
     --lightgray: rgb(235, 235, 235);
-    --orange-dark: rgb(185,82,32);
-    --red-dark: rgb(169,33,34);
+    --orange-dark: rgb(185, 82, 32);
+    --red-dark: rgb(169, 33, 34);
     --greeen: rgb(0, 152, 13);
 }
 nav {
@@ -60,61 +60,12 @@ main {
     flex-direction: column;
     gap: 10px;
 }
-.resume {
-    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    border-radius: 5px;
-    background-color: var(--lightgray);
-}
-
-.top-resume {
-    padding: 20px;
-    min-height: 80px;
-    background-color: var(--berkeley-blue);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-}
-
-.bottom-resume {
-    display: flex;
-    flex: 1;
-}
-
-.resume-info-1 {
-    padding: 20px;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.resume-info-2 {
-    background-color: var(--medium-gray);
-    padding: 15px;
-    width: 30%;
-}
-
-.blue-text {
-    color: var(--berkeley-blue);
-}
-
-
-.personal-details-title {
-    color: var(--berkeley-blue);
-}
 
 .personal-info-inputs {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-
 
 .education-inputs {
     display: flex;
@@ -128,7 +79,6 @@ button {
     border: none;
     color: white;
     padding: 5px;
-
 }
 
 .example-btn {
@@ -136,31 +86,15 @@ button {
 }
 
 .reset-btn {
-background-color: var(--red-dark);
+    background-color: var(--red-dark);
 }
 
 .print-btn {
     background-color: var(--greeen);
-
 }
 
 .add-experience-btn {
     background-color: var(--greeen);
-    
-}
-
-
-.education-content {
-    display: flex;
-    gap: 20px;
-}
-
-.education-content-left {
-    font-weight: bold;
-}
-
-.experience-content-left {
-    font-weight: bold;
 }
 
 .bold-text {

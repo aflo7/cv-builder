@@ -1,5 +1,6 @@
 import Avatar from "../assets/images/avatar.png"
 import Experience from "./Experience"
+import '../css/Resume.css'
 
 function Resume({ parentState }) {
     return (
