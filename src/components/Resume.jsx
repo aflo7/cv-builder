@@ -1,13 +1,12 @@
-import React from "react"
 import Avatar from "../assets/images/avatar.png"
+import Experience from "./Experience"
 
 function Resume({ parentState }) {
     return (
         <div className="resume">
             <div className="top-resume">
                 <h2 className="name">{parentState.personalInfo.name}</h2>
-                {parentState.personalInfo.title}
-                <p></p>
+                <p>{parentState.personalInfo.title}</p>
             </div>
             <div className="bottom-resume">
                 <div className="resume-info-1">
@@ -20,27 +19,19 @@ function Resume({ parentState }) {
                         <em>{parentState.personalInfo.description}</em>
                     </p>
 
-                    <div>
-                        <h3 className="blue-text">Experience</h3>
-                        <hr></hr>
-                    </div>
-
-                    <div className="experience-content">
-                        <div className="experience-content-left">
-                            {parentState.experience.from}-
-                            {parentState.experience.to}
+                    {parentState.experience.length > 0 && (
+                        <div>
+                            <h3 className="blue-text">Experience</h3>
+                            <hr></hr>
                         </div>
+                    )}
 
-                        <div className="experience-content-right">
-                            <div className="bold-text">
-                                {parentState.experience.position}
-                            </div>
-                            <div>
-                                {parentState.experience.company},{" "}
-                                {parentState.experience.city}
-                            </div>
-                        </div>
-                    </div>
+                    {parentState.experience.length > 0 &&
+                        parentState.experience.map((experience, i) => {
+                            return (
+                                <Experience experience={experience} key={i} />
+                            )
+                        })}
 
                     <div>
                         <h3 className="blue-text">Education</h3>
@@ -63,8 +54,8 @@ function Resume({ parentState }) {
                         </div>
 
                         <div>
-                            <div>Degree: {parentState.education.degree}</div>
-                            <div>Subject: {parentState.education.subject}</div>
+                            <p>Degree: {parentState.education.degree}</p>
+                            <p>Subject: {parentState.education.subject}</p>
                         </div>
                     </div>
                 </div>

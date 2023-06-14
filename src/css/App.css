@@ -12,6 +12,7 @@
     --lightgray: rgb(235, 235, 235);
     --orange-dark: rgb(185,82,32);
     --red-dark: rgb(169,33,34);
+    --greeen: rgb(0, 152, 13);
 }
 nav {
     background-color: var(--complement);
@@ -33,6 +34,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 @media screen and (min-width: 800px) {
@@ -113,11 +115,6 @@ main {
     gap: 5px;
 }
 
-.experience-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
 
 .education-inputs {
     display: flex;
@@ -142,10 +139,16 @@ button {
 background-color: var(--red-dark);
 }
 
-.experience-content {
-    display: flex;
-    gap: 20px;
+.print-btn {
+    background-color: var(--greeen);
+
 }
+
+.add-experience-btn {
+    background-color: var(--greeen);
+    
+}
+
 
 .education-content {
     display: flex;
