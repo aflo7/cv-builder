@@ -6,7 +6,7 @@ import ExperienceInputGroup from "./components/Experience/ExperienceInputGroup"
 import PersonalInfoInputGroup from "./components/PersonalInfoInputGroup"
 import EducationInputGroup from "./components/Education/EducationInputGroup"
 import { v4 as uuidv4 } from "uuid"
-import BottomButtonWrapper from "./components/BottomButtonWrapper"
+import ReactToPrint from "react-to-print"
 
 class App extends Component {
     constructor(props) {
@@ -156,13 +156,38 @@ class App extends Component {
 
                         <hr></hr>
 
-                        <BottomButtonWrapper
-                            fillFieldsWithExample={this.fillFieldsWithExample}
-                            resetFields={this.resetFields}
+                        <ReactToPrint
+                            trigger={() => {
+                                return (
+                                    <a href="#">
+                                        <button className="print-btn">
+                                            Print
+                                        </button>
+                                    </a>
+                                )
+                            }}
+                            content={() => this.componentRef}
                         />
+
+                        <button
+                            data-testid="load-data-btn"
+                            className="example-btn"
+                            onClick={this.fillFieldsWithExample}
+                        >
+                            Load example
+                        </button>
+                        <button
+                            className="reset-btn"
+                            onClick={this.resetFields}
+                        >
+                            Reset
+                        </button>
                     </div>
 
-                    <Resume parentState={this.state} />
+                    <Resume
+                        parentState={this.state}
+                        ref={(el) => (this.componentRef = el)}
+                    />
                 </main>
             </div>
         )

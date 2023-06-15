@@ -2,8 +2,9 @@ import Avatar from "../assets/images/avatar.png"
 import Experience from "./Experience/Experience"
 import "../css/Resume.css"
 import Education from "./Education/Education"
+import { forwardRef } from "react"
 
-function Resume({ parentState }) {
+const Resume = forwardRef(({ parentState }, ref) => {
     const experienceItems = parentState.experience.map((experience, i) => (
         <Experience experience={experience} key={i} />
     ))
@@ -24,7 +25,7 @@ function Resume({ parentState }) {
         </div>
     )
     return (
-        <div className="resume">
+        <div className="resume" ref={ref}>
             <div className="top-resume">
                 <h2 className="name">{parentState.personalInfo.name}</h2>
                 <p>{parentState.personalInfo.title}</p>
@@ -59,6 +60,7 @@ function Resume({ parentState }) {
             </div>
         </div>
     )
-}
+})
+Resume.displayName = "Resume"
 
 export default Resume

@@ -10,6 +10,7 @@
 -   [React](https://reactjs.org/) - JS library
 -   React Testing Library
 -   Jest
+-   react-to-print
 
 ### What I learned
 

@@ -76,6 +76,7 @@ button {
 
 .print-btn {
     background-color: var(--greeen);
+    width: 100%;
 }
 
 .add-experience-btn {
