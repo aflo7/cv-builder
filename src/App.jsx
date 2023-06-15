@@ -5,8 +5,7 @@ import Resume from "./components/Resume"
 import ExperienceInputGroup from "./components/ExperienceInputGroup"
 import PersonalInfoInputGroup from "./components/PersonalInfoInputGroup"
 import EducationInputGroup from "./components/Education/EducationInputGroup"
-import {v4 as uuidv4} from 'uuid';
-
+import { v4 as uuidv4 } from "uuid"
 
 class App extends Component {
     constructor(props) {
@@ -71,14 +70,16 @@ class App extends Component {
         })
     }
     render() {
-        const experienceInputs = this.state.experience.map((experience, i) => (
-            <ExperienceInputGroup
-                key={i}
-                experience={experience}
-                handleExperienceChange={this.handleExperienceChange}
-                handleExperienceDelete={this.handleExperienceDelete}
-            />
-        ))
+        const experienceInputGroups = this.state.experience.map(
+            (experience, i) => (
+                <ExperienceInputGroup
+                    key={i}
+                    experience={experience}
+                    handleExperienceChange={this.handleExperienceChange}
+                    handleExperienceDelete={this.handleExperienceDelete}
+                />
+            )
+        )
         return (
             <div className="app-wrapper">
                 <nav>REACT RESUME BUILDER</nav>
@@ -94,7 +95,7 @@ class App extends Component {
 
                         <h3>Experience</h3>
 
-                        {experienceInputs}
+                        {experienceInputGroups}
 
                         <button
                             className="add-experience-btn"
@@ -114,7 +115,7 @@ class App extends Component {
                             Print (not implemented)
                         </button>
                         <button
-                        data-testid="load-data-btn"
+                            data-testid="load-data-btn"
                             className="example-btn"
                             onClick={this.fillFieldsWithExample}
                         >

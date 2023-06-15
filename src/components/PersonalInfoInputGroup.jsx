@@ -1,6 +1,12 @@
+import "../css/PersonalInfoInputGroup.css"
+
 function PersonalInfoInputGroup({ personalInfo, handlePersonalInfoChange }) {
     return (
-        <form data-testid="personal-info-inputs" className="personal-info-inputs" name="personal-info-inputs">
+        <form
+            data-testid="personal-info-inputs"
+            className="personal-info-inputs"
+            name="personal-info-inputs"
+        >
             <h3>Personal Information</h3>
             <input
                 data-testid="name"
@@ -42,14 +48,12 @@ function PersonalInfoInputGroup({ personalInfo, handlePersonalInfoChange }) {
                 value={personalInfo.email}
                 onChange={(e) => handlePersonalInfoChange(e)}
             />
-            <input
-                data-testid="description"
-                name="description"
-                type="text"
+            <textarea
                 placeholder="Description"
+                name="description"
                 value={personalInfo.description}
                 onChange={(e) => handlePersonalInfoChange(e)}
-            />
+            ></textarea>
         </form>
     )
 }

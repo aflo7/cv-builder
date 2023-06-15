@@ -30,18 +30,10 @@ body {
 
 main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 40px;
     margin-bottom: 40px;
-}
-
-@media screen and (min-width: 800px) {
-    main {
-        flex-direction: row;
-        align-items: normal;
-    }
 }
 
 .inputs input {
@@ -51,7 +43,8 @@ main {
 }
 .inputs {
     flex-shrink: 0;
-    width: 700px;
+    width: 595px;
+
     border-radius: 5px;
     background-color: var(--lightgray);
     padding: 20px;
