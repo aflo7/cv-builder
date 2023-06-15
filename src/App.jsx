@@ -126,6 +126,7 @@ class App extends Component {
                 <nav>REACT RESUME BUILDER</nav>
 
                 <main>
+
                     <div className="inputs">
                         <PersonalInfoInputGroup
                             personalInfo={this.state.personalInfo}

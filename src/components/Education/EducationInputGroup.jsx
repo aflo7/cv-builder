@@ -46,7 +46,7 @@ function EducationInputGroup({ education, handleEducationChange, handleEducation
                 onChange={(e) => handleEducationChange(e, education.id)}
             />
             <button
-                className="reset-btn"
+                className="delete-btn"
                 onClick={() => handleEducationDelete(education.id)}
             >
                 Delete Education

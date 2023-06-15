@@ -23,6 +23,9 @@
     width: 595px;
     border-radius: 5px;
     background-color: var(--lightgray);
+    position: sticky;
+    top: 40px;
+
 }
 
 @media print {

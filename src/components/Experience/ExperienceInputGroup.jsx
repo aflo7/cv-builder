@@ -44,7 +44,7 @@ function ExperienceInputGroup({
                 onChange={(e) => handleExperienceChange(e, experience.id)}
             />
             <button
-                className="reset-btn"
+                className="delete-btn"
                 onClick={() => handleExperienceDelete(experience.id)}
             >
                 Delete Experience
