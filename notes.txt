@@ -29,3 +29,6 @@ class Example extends React.PureComponent {
     );
   }
 }
+
+eslint mod
+    "no-unused-vars": "warn"

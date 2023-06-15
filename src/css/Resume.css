@@ -11,6 +11,7 @@
     --orange-dark: rgb(185, 82, 32);
     --red-dark: rgb(169, 33, 34);
     --greeen: rgb(0, 152, 13);
+    --neutral-gray: rgb(45,45,45);
 }
 
 .resume {
@@ -20,7 +21,6 @@
     flex-direction: column;
     height: 842px;
     width: 595px;
-
     border-radius: 5px;
     background-color: var(--lightgray);
 }
