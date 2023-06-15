@@ -2,10 +2,11 @@ import "./css/App.css"
 import { Component } from "react"
 import { filledFields, emptyFields } from "./js/stateObjects"
 import Resume from "./components/Resume"
-import ExperienceInputGroup from "./components/ExperienceInputGroup"
+import ExperienceInputGroup from "./components/Experience/ExperienceInputGroup"
 import PersonalInfoInputGroup from "./components/PersonalInfoInputGroup"
 import EducationInputGroup from "./components/Education/EducationInputGroup"
 import { v4 as uuidv4 } from "uuid"
+import BottomButtonWrapper from "./components/BottomButtonWrapper"
 
 class App extends Component {
     constructor(props) {
@@ -40,9 +41,29 @@ class App extends Component {
         })
     }
 
+    handleEducationChange = (e, id) => {
+        this.setState({
+            education: this.state.education.map((item) => {
+                if (item.id === id) {
+                    return { ...item, [e.target.name]: e.target.value }
+                } else return item
+            })
+        })
+    }
+
     handleExperienceDelete = (id) => {
         this.setState({
-            experience: this.state.experience.filter((item) => item.id !== id)
+            experience: this.state.experience.filter(
+                (experienceItem) => experienceItem.id !== id
+            )
+        })
+    }
+
+    handleEducationDelete = (id) => {
+        this.setState({
+            education: this.state.education.filter(
+                (educationItem) => educationItem.id !== id
+            )
         })
     }
 
@@ -61,14 +82,24 @@ class App extends Component {
             ]
         })
     }
-    handleEducationChange = (e) => {
+
+    addEducationItem = () => {
         this.setState({
-            education: {
+            education: [
                 ...this.state.education,
-                [e.target.name]: e.target.value
-            }
+                {
+                    id: uuidv4(),
+                    universityName: "",
+                    location: "",
+                    degree: "",
+                    subject: "",
+                    from: "",
+                    to: ""
+                }
+            ]
         })
     }
+
     render() {
         const experienceInputGroups = this.state.experience.map(
             (experience, i) => (
@@ -77,6 +108,16 @@ class App extends Component {
                     experience={experience}
                     handleExperienceChange={this.handleExperienceChange}
                     handleExperienceDelete={this.handleExperienceDelete}
+                />
+            )
+        )
+        const educationInputGroups = this.state.education.map(
+            (education, i) => (
+                <EducationInputGroup
+                    key={i}
+                    education={education}
+                    handleEducationChange={this.handleEducationChange}
+                    handleEducationDelete={this.handleEducationDelete}
                 />
             )
         )
@@ -104,29 +145,21 @@ class App extends Component {
                             Add Experience
                         </button>
 
-                        <EducationInputGroup
-                            education={this.state.education}
-                            handleEducationChange={this.handleEducationChange}
-                        />
+                        <h3>Education</h3>
+                        {educationInputGroups}
+                        <button
+                            className="add-experience-btn"
+                            onClick={this.addEducationItem}
+                        >
+                            Add Eduation
+                        </button>
 
                         <hr></hr>
 
-                        <button className="print-btn">
-                            Print (not implemented)
-                        </button>
-                        <button
-                            data-testid="load-data-btn"
-                            className="example-btn"
-                            onClick={this.fillFieldsWithExample}
-                        >
-                            Load example
-                        </button>
-                        <button
-                            className="reset-btn"
-                            onClick={this.resetFields}
-                        >
-                            Reset
-                        </button>
+                        <BottomButtonWrapper
+                            fillFieldsWithExample={this.fillFieldsWithExample}
+                            resetFields={this.resetFields}
+                        />
                     </div>
 
                     <Resume parentState={this.state} />

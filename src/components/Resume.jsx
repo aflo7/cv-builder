@@ -1,8 +1,28 @@
 import Avatar from "../assets/images/avatar.png"
-import Experience from "./Experience"
+import Experience from "./Experience/Experience"
 import "../css/Resume.css"
+import Education from "./Education/Education"
 
 function Resume({ parentState }) {
+    const experienceItems = parentState.experience.map((experience, i) => (
+        <Experience experience={experience} key={i} />
+    ))
+    const experienceHeader =
+        parentState.experience.length > 0 ? (
+            <div>
+                <h3 className="blue-text">Experience</h3>
+                <hr></hr>
+            </div>
+        ) : null
+    const educationItems = parentState.education.map((education, i) => (
+        <Education key={i} education={education} />
+    ))
+    const educationHeader = parentState.education.length > 0 && (
+        <div>
+            <h3 className="blue-text">Education</h3>
+            <hr></hr>
+        </div>
+    )
     return (
         <div className="resume">
             <div className="top-resume">
@@ -16,47 +36,13 @@ function Resume({ parentState }) {
                         <hr></hr>
                     </div>
 
-                    <p>
-                        <em>{parentState.personalInfo.description}</em>
-                    </p>
+                    <p>{parentState.personalInfo.description}</p>
 
-                    {parentState.experience.length > 0 && (
-                        <div>
-                            <h3 className="blue-text">Experience</h3>
-                            <hr></hr>
-                        </div>
-                    )}
+                    {experienceHeader}
+                    {experienceItems}
 
-                    {parentState.experience.length > 0 &&
-                        parentState.experience.map((experience, i) => (
-                            <Experience experience={experience} key={i} />
-                        ))}
-
-                    <div>
-                        <h3 className="blue-text">Education</h3>
-                        <hr></hr>
-                    </div>
-
-                    <div className="education-content">
-                        <div>
-                            {parentState.education.from}-
-                            {parentState.education.to}
-                        </div>
-
-                        <div>
-                            <div>
-                                <p className="bold-text">
-                                    {parentState.education.universityName}
-                                </p>
-                                <p>{parentState.education.location}</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>Degree: {parentState.education.degree}</p>
-                            <p>Subject: {parentState.education.subject}</p>
-                        </div>
-                    </div>
+                    {educationHeader}
+                    {educationItems}
                 </div>
                 <div className="resume-info-2">
                     <img className="avatar" src={Avatar} />

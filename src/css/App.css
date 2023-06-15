@@ -27,7 +27,6 @@ body {
     font-family: "Signika Negative", sans-serif;
     background-color: var(--darkgray);
 }
-
 main {
     display: flex;
     flex-direction: row;
@@ -35,7 +34,6 @@ main {
     gap: 40px;
     margin-bottom: 40px;
 }
-
 .inputs input {
     border-radius: 5px;
     border: none;
@@ -44,7 +42,7 @@ main {
 .inputs {
     flex-shrink: 0;
     width: 595px;
-
+    height: fit-content;
     border-radius: 5px;
     background-color: var(--lightgray);
     padding: 20px;

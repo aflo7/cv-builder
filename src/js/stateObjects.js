@@ -1,4 +1,4 @@
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid"
 
 export const emptyFields = {
     personalInfo: {
@@ -10,24 +10,26 @@ export const emptyFields = {
         description: ""
     },
     experience: [
-        {
-            id: uuidv4(),
-            position: "",
-            company: "",
-            city: "",
-            from: "",
-            to: ""
-        }
+        // {
+        //     id: uuidv4(),
+        //     position: "",
+        //     company: "",
+        //     city: "",
+        //     from: "",
+        //     to: ""
+        // }
     ],
-    education: {
-        id: uuidv4(),
-        universityName: "",
-        location: "",
-        degree: "",
-        subject: "",
-        from: "",
-        to: ""
-    }
+    education: [
+        // {
+        //     id: uuidv4(),
+        //     universityName: "",
+        //     location: "",
+        //     degree: "",
+        //     subject: "",
+        //     from: "",
+        //     to: ""
+        // }
+    ]
 }
 
 export const filledFields = {
@@ -66,13 +68,33 @@ export const filledFields = {
             to: "2023"
         }
     ],
-    education: {
-        id: uuidv4(),
-        universityName: "Harvard University",
-        location: "Cambridge, MA",
-        degree: "Bachelors",
-        subject: "English",
-        from: "2006",
-        to: "2010"
-    }
+    education: [
+        {
+            id: uuidv4(),
+            universityName: "The Community College",
+            location: "Pittsburgh, PA",
+            degree: "Associate",
+            subject: "Science",
+            from: "2000",
+            to: "2002"
+        },
+        {
+            id: uuidv4(),
+            universityName: "Harvard University",
+            location: "Cambridge, MA",
+            degree: "Bachelor",
+            subject: "English",
+            from: "2002",
+            to: "2006"
+        },
+        {
+            id: uuidv4(),
+            universityName: "MIT",
+            location: "Cambridge, MA",
+            degree: "Master",
+            subject: "Mathematics",
+            from: "2006",
+            to: "2010"
+        }
+    ]
 }

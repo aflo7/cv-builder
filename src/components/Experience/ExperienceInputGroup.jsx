@@ -1,5 +1,5 @@
 import React from "react"
-import "../css/ExperienceInputGroup.css"
+import "../../css/ExperienceInputGroup.css"
 
 function ExperienceInputGroup({
     experience,
